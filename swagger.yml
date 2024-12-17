@@ -1,0 +1,413 @@
+openapi: 3.0.0
+info:
+  title: API de Poemas e Usuários
+  description: API para gerenciar poemas e usuários.
+  version: 1.0.0
+paths:
+  /poemas:
+    post:
+      summary: Criar um poema
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                titulo:
+                  type: string
+                  description: O título do poema
+                conteudo:
+                  type: string
+                  description: O conteúdo do poema
+                autor:
+                  type: string
+                  description: O autor do poema (opcional)
+      responses:
+        '201':
+          description: Poema criado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Poema criado com sucesso!
+        '400':
+          description: Dados insuficientes para criar o poema
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Dados insuficientes para criar o poema
+    get:
+      summary: Listar todos os poemas
+      responses:
+        '200':
+          description: Lista de poemas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: O ID do poema
+                    titulo:
+                      type: string
+                      description: O título do poema
+                    conteudo:
+                      type: string
+                      description: O conteúdo do poema
+                    autor:
+                      type: string
+                      description: O autor do poema
+  /poemas/{id}:
+    get:
+      summary: Mostrar um poema específico
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: O ID do poema
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Poema encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  titulo:
+                    type: string
+                  conteudo:
+                    type: string
+                  autor:
+                    type: string
+        '404':
+          description: Poema não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Poema não encontrado
+    put:
+      summary: Atualizar um poema
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: O ID do poema
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                titulo:
+                  type: string
+                  description: O título do poema
+                conteudo:
+                  type: string
+                  description: O conteúdo do poema
+                autor:
+                  type: string
+                  description: O autor do poema (opcional)
+      responses:
+        '200':
+          description: Poema atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Poema atualizado com sucesso!
+        '400':
+          description: Dados insuficientes para atualizar o poema
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Dados insuficientes para atualizar o poema
+        '404':
+          description: Poema não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Poema não encontrado
+    delete:
+      summary: Deletar um poema
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: O ID do poema
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Poema deletado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Poema deletado com sucesso!
+        '404':
+          description: Poema não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Poema não encontrado
+  /users:
+    post:
+      summary: Criar um usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: O nome do usuário
+                email:
+                  type: string
+                  description: O email do usuário
+                password:
+                  type: string
+                  description: A senha do usuário
+      responses:
+        '201':
+          description: Usuário criado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário criado com sucesso!
+        '400':
+          description: Dados insuficientes para criar o usuário
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Dados insuficientes para criar o usuário
+    get:
+      summary: Listar todos os usuários
+      responses:
+        '200':
+          description: Lista de usuários
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    email:
+                      type: string
+  /users/{id}:
+    get:
+      summary: Mostrar um usuário específico
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: O ID do usuário
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Usuário encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  email:
+                    type: string
+        '404':
+          description: Usuário não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Usuário não encontrado
+    put:
+      summary: Atualizar um usuário
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: O ID do usuário
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: O nome do usuário
+                email:
+                  type: string
+                  description: O email do usuário
+                password:
+                  type: string
+                  description: A senha do usuário
+      responses:
+        '200':
+          description: Usuário atualizado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário atualizado com sucesso!
+        '400':
+          description: Dados insuficientes para atualizar o usuário
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Dados insuficientes para atualizar o usuário
+        '404':
+          description: Usuário não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Usuário não encontrado
+    delete:
+      summary: Deletar um usuário
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: O ID do usuário
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Usuário deletado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário deletado com sucesso!
+        '404':
+          description: Usuário não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Usuário não encontrado
+  /login:
+    post:
+      summary: Realizar login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login realizado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Login realizado com sucesso!
+        '400':
+          description: Dados insuficientes para realizar o login
+        '401':
+          description: Email ou senha inválidos
+  /logout:
+    post:
+      summary: Realizar logout
+      responses:
+        '200':
+          description: Logout realizado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Logout realizado com sucesso!
