@@ -6,7 +6,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
 
 ### Poemas
 
-#### 1. **Criar um Poema**
+#### 1. **Criar um Poema** 📜
 - **Rota:** `POST /poemas`
 - **Descrição:** Cria um novo poema.
 - **Requisição:**
@@ -31,7 +31,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 2. **Listar Todos os Poemas**
+#### 2. **Listar Todos os Poemas** 📚
 - **Rota:** `GET /poemas`
 - **Descrição:** Retorna todos os poemas.
 - **Resposta Sucesso (200):**
@@ -46,7 +46,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     ]
     ```
 
-#### 3. **Exibir Poema Específico**
+#### 3. **Exibir Poema Específico** 📖
 - **Rota:** `GET /poemas/{id}`
 - **Descrição:** Retorna um poema específico pelo ID.
 - **Requisição:** 
@@ -67,7 +67,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 4. **Atualizar Poema**
+#### 4. **Atualizar Poema** ✏️
 - **Rota:** `PUT /poemas/{id}`
 - **Descrição:** Atualiza um poema específico.
 - **Requisição (JSON):**
@@ -91,7 +91,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 5. **Deletar Poema**
+#### 5. **Deletar Poema** 🗑️
 - **Rota:** `DELETE /poemas/{id}`
 - **Descrição:** Deleta um poema específico.
 - **Resposta Sucesso (200):**
@@ -111,7 +111,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
 
 ### Usuários
 
-#### 1. **Criar um Usuário**
+#### 1. **Criar um Usuário** 🧑‍💻
 - **Rota:** `POST /users`
 - **Descrição:** Cria um novo usuário.
 - **Requisição:**
@@ -136,7 +136,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 2. **Listar Todos os Usuários**
+#### 2. **Listar Todos os Usuários** 👥
 - **Rota:** `GET /users`
 - **Descrição:** Retorna todos os usuários.
 - **Resposta Sucesso (200):**
@@ -150,7 +150,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     ]
     ```
 
-#### 3. **Exibir Usuário Específico**
+#### 3. **Exibir Usuário Específico** 🧑‍💼
 - **Rota:** `GET /users/{id}`
 - **Descrição:** Retorna um usuário específico pelo ID.
 - **Requisição:**
@@ -170,7 +170,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 4. **Atualizar Usuário**
+#### 4. **Atualizar Usuário** ✍️
 - **Rota:** `PUT /users/{id}`
 - **Descrição:** Atualiza os dados de um usuário específico.
 - **Requisição (JSON):**
@@ -194,7 +194,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 5. **Deletar Usuário**
+#### 5. **Deletar Usuário** 🗑️
 - **Rota:** `DELETE /users/{id}`
 - **Descrição:** Deleta um usuário específico.
 - **Resposta Sucesso (200):**
@@ -210,7 +210,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 6. **Login de Usuário**
+#### 6. **Login de Usuário** 🔑
 - **Rota:** `POST /login`
 - **Descrição:** Realiza o login de um usuário.
 - **Requisição (JSON):**
@@ -233,7 +233,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 7. **Logout de Usuário**
+#### 7. **Logout de Usuário** 🚪
 - **Rota:** `POST /logout`
 - **Descrição:** Realiza o logout de um usuário.
 - **Resposta Sucesso (200):**
@@ -243,7 +243,7 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
     }
     ```
 
-#### 8. **Perfil do Usuário**
+#### 8. **Perfil do Usuário** 👤
 - **Rota:** `GET /perfil`
 - **Descrição:** Exibe as informações do perfil do usuário logado.
 - **Requisição:** Deve estar autenticado (sessão ativa).
@@ -263,13 +263,13 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
 
 ---
 
-## Tecnologias
+## Tecnologias ⚙️
 
 - **Framework:** Slim Framework
 - **Banco de Dados:** SQLite
 - **Autenticação:** Sessões
 
-## Instalação
+## Instalação ⚡
 
 1. Clone este repositório.
 2. Execute o comando `composer install` para instalar as dependências.
@@ -277,6 +277,6 @@ Esta API permite a criação, leitura, atualização e exclusão de poemas e usu
 
 ---
 
-## Licença
+## Licença 📄
 
 Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
